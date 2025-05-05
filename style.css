@@ -1,8 +1,8 @@
 :root {
-  --bg: #edddd4;
-  --bg2: #fffefd;
-  --fg: #3c3836;
-  --accent: #b57614;
+  --bg: #2d3e50; /* Softened blue background (less harsh than #1c2a39) */
+  --bg2: #c0c0c0; /* Classic light grey panel/window */
+  --fg: #000000;
+  --accent: #007acc;
 }
 
 * {
@@ -10,63 +10,106 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  color: var(--fg);
-  font-family: system-ui, sans-serif;
-  padding: 2rem;
-  text-align: left;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  user-select: text;
-}
 
 html {
   background-color: var(--bg);
 }
 
-.primary-text {
-  font-size: inherit;
+body {
+  color: var(--fg);
+  font-family: monospace;
+  padding: 2rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
-.secondary-text {
-  font-size: inherit;
-  opacity: 0.6;
+
+main {
+  padding: 1.2rem;
+  background: var(--bg2);
+  border: 2px solid #000000;
+  box-shadow: 12px 12px 0px #000000;
+  border-top: 2px solid var(--bg2);
+  border-left: 2px solid var(--bg2);
+  max-width: 95%;
+  width: 450px;
+  margin: 1rem auto;
 }
-p {
-  transition: color 0.3s ease, transform 0.3s ease;
+@media (min-width: 768px) {
+  main {
+    padding: 1rem;
+    margin: 1rem 1rem;
+  }
 }
+
 section {
   margin-top: 1.5rem;
 }
+
+p {
+  margin-bottom: 0.5rem;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
 }
+
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
+
 a {
   font-size: inherit;
   color: var(--accent);
   text-decoration: underline;
 }
 
+h1 {
+  font-size: inherit;
+}
+
+h2 {
+  font-size: inherit;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+#location-text {
+  font-size: inherit;
+  opacity: 0.6;
+}
+
 #updated-date {
+  font-size: inherit;
+  opacity: 0.5;
   display: none;
 }
 
-main {
-  padding: 1rem;
-  background: var(--bg2);
-  border: 2px solid black;
-  box-shadow: 10px 10px 0px black;
-  border-top: 2px solid var(--bg2);
-  border-left: 2px solid var(--bg2);
-  max-width: 95%;
-  width: 400px;
-  margin: 1rem auto;
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-size: inherit;
+  gap: 0.5em;
+  color: #000000;
 }
-@media (min-width: 768px) {
-  main {
-    margin: 1rem 1rem;
+
+.status-light {
+  width: 7px;
+  height: 7px;
+  background-color: #8b0000;
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
   }
 }

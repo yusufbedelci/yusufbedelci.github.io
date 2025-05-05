@@ -15,15 +15,8 @@ const months = {
 
 async function getDateString() {
   try {
-    const response = await fetch(
-      "https://api.github.com/repos/yusufbedelci/yusufbedelci.github.io/branches/main"
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    const date = new Date(data.commit.commit.author.date);
-
+    const data = (await fetch("last-updated.txt").then((r) => r.text())).trim();
+    const date = new Date(data);
     return `updated ${months[date.getMonth() + 1]}, ${date.getFullYear()}`;
   } catch (error) {
     console.error("Fetch error:", error);
