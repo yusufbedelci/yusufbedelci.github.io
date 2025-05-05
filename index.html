@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusuf's personal website</title>
-</head>
-<body>
-    <p>Hello world!</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>yusuf</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Get last commit date from here to show last updated date automatically -->
+    <!-- https://api.github.com/repos/yusufbedelci/yusufbedelci.github.io/branches/main -->
+
+    <main>
+      <h1 class="primary-text">Yusuf</h1>
+      <p class="secondary-text">The Hague, Netherlands</p>
+
+      <section>
+        <p>
+          I'm a software engineering student at
+          <a href="https://www.rotterdamuas.com" target="_blank">ruas</a>.
+        </p>
+      </section>
+
+      <section>
+        <p><a href="mailto:yusuf@bedelci.com">yusuf@bedelci.com</a></p>
+        <p>
+          <a href="https://github.com/yusufbedelci">github.com/yusufbedelci</a>
+        </p>
+      </section>
+
+      <section>
+        <p class="secondary-text" id="updated-date">0</p>
+      </section>
+    </main>
+  </body>
 </html>
