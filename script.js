@@ -23,6 +23,31 @@ async function getDateString() {
   }
 }
 
+function setTitle() {
+  const final = "Yusuf 🌺";
+  let scrambled = final.split("");
+  let settled = 0;
+
+  const chars =
+    "!@#$%^&*()-_=+{}[]|;:',.<>?/\\abcdefghijklmnopqrstuvwxyz0123456789";
+
+  const interval = setInterval(() => {
+    scrambled = scrambled.map((char, i) => {
+      if (i < settled) return final[i];
+      return chars[Math.floor(Math.random() * chars.length)];
+    });
+
+    document.title = scrambled.join("");
+
+    if (settled < final.length) {
+      settled++;
+    } else {
+      clearInterval(interval);
+      document.title = final;
+    }
+  }, 100);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const dateString = await getDateString();
   const updatedDateEl = document.getElementById("updated-date");
@@ -31,4 +56,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     updatedDateEl.style.display = "block";
     updatedDateEl.innerHTML = dateString;
   }
+
+  setTitle();
 });

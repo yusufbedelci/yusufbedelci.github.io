@@ -1,6 +1,6 @@
 :root {
-  --bg: #2d3e50; /* Softened blue background (less harsh than #1c2a39) */
-  --bg2: #c0c0c0; /* Classic light grey panel/window */
+  --bg: #2d3e50;
+  --bg2: #c0c0c0;
   --fg: #000000;
   --accent: #007acc;
 }
@@ -35,10 +35,10 @@ main {
   width: 450px;
   margin: 1rem auto;
 }
+
 @media (min-width: 768px) {
   main {
     padding: 1rem;
-    margin: 1rem 1rem;
   }
 }
 
@@ -63,6 +63,12 @@ a {
   font-size: inherit;
   color: var(--accent);
   text-decoration: underline;
+  padding: 0.1rem;
+}
+
+a:hover {
+  background-color: var(--accent);
+  color: var(--bg2);
 }
 
 h1 {
