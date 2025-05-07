@@ -24,7 +24,7 @@ async function getDateString() {
 }
 
 function setTitle() {
-  const final = "Yusuf 🌺";
+  const final = document.title;
   let scrambled = final.split("");
   let settled = 0;
 
