@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
 html {
   background-color: var(--bg);
 }
@@ -93,36 +98,18 @@ h2 {
   opacity: 0.6;
 }
 
+#new-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 0.5rem;
+  padding: 0.1rem 0.25rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
 #updated-date {
   font-size: inherit;
   opacity: 0.5;
   display: none;
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  font-family: monospace;
-  font-size: inherit;
-  gap: 0.5em;
-  color: #000000;
-}
-
-.status-light {
-  width: 7px;
-  height: 7px;
-  background-color: var(--accent);
-  display: inline-block;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
 }
